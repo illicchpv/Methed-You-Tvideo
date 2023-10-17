@@ -34,6 +34,9 @@ base CSS https://codepen.io/Quper/pen/GRRZzWy
   странности с sprite.svg
     если свг с id="star"
     поместить после свг с  id="star-ow" то если свг с id="star" не показывается
+    == 
+    В спрайтах нужно тег svg заменять на symbol и потом использовать через 
+    <svg><use href" ="sprite.svg#id"><use/></svg>
 
 
   
