@@ -25,11 +25,17 @@ base CSS https://codepen.io/Quper/pen/GRRZzWy
   написал: img.video-card__thumbnail
   он развернулся в <img src="" alt="" class="video-card__thumbnail">
   ?как сделать чтоб разворачивался в: <img class="video-card__thumbnail" src="" alt="">
+    ==
+    "emmet.preferences": {
+      "output.reverseAttributes": true
+    }
   
   вопрос по .container
   ?почему бы вместо вычислений не использовать для .container
     box-sizing: content-box;
     max-width: 1260px;
+    ==
+    box-sizing: content-box; будет наследоваться. неудобно!
 
   странности с sprite.svg
     если свг с id="star"
@@ -38,5 +44,18 @@ base CSS https://codepen.io/Quper/pen/GRRZzWy
     В спрайтах нужно тег svg заменять на symbol и потом использовать через 
     <svg><use href" ="sprite.svg#id"><use/></svg>
 
+  вставка контента с youtube:
+    ==
+    <iframe width="560" height="315" 
+      src="https://www.youtube.com/embed/yBY5b8S4z9Y?si=zSsECTopJDZmrcYx" 
+      title="YouTube video player" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen
+    >
+    </iframe>
+разбор вопросов
+  https://www.youtube.com/watch?v=GNbcn5fr3K8&t=4619s
 
-  
+============================================
+День 2
+
