@@ -368,3 +368,35 @@ iframe {
   width: 20px;
   height: 20px;
 }
+
+/* footer */
+.footer {
+  background: #FF6A00 url('../image/bgFooter.jpg') center/cover;
+  color: #fff;
+}
+.footer__container {
+  padding: 51px var(--pd);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__link {
+}
+.footer__logo {
+  width: 360px;
+  height: 48px;
+}
+.footer__developers-list {
+}
+.footer__developers-item {
+  margin-bottom: 9px;
+}
+.footer__developers-link {
+  letter-spacing: 0.02em;  
+}
+.footer__copyright {
+  display: inline-block;
+  margin-top: 16px;
+
+  letter-spacing: 0.02em;  
+}
