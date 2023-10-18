@@ -64,9 +64,51 @@ base CSS https://codepen.io/Quper/pen/GRRZzWy
     https://www.youtube.com/watch?v=rAYi7jCgr4M
 
   вопросы:
-    ?формула пересчета из (px) в (em)
+    ? хотелось бы формула пересчета из font-size и letter-spacing(px) в letter-spacing(em)
+    letter-spacing(em) = letter-spacing(px) / font-size
 
-    ? .video-card__icon по макету внутренности звёздочки закрашены. 
-      у нас прозрачные
+    ? на главной .video-card__icon по макету внутренности звёздочки закрашены белым. 
+      у нас ⭐️ закрашены прозрачным
       
-    ? <button class="video__link video__link_favorite" href="favorite...
+    ? в уроке вы забыли убрать href 
+      <button class="video__link video__link_favorite" href="favorite...
+
+    ? нашел не совпадение с макетом.
+      \в избранном ⭐️\ должна быть выше.
+
+    ? ведет себя эта конструкция внутри video__container, странно 
+      при уменьшении экрана звёздочка уходит из видимости.
+      как я понял, такое происходит т.к. не помещается содержимое. а а для 
+      обеих дочерних не указано какое может уменьшаться. вот последнее и обрезается.
+      решается:
+
+      .video__content {
+          flex-shrink: 1;
+      }
+
+      .video__link {
+          width: max-content;
+          white-space: nowrap;
+          display: flex;
+          gap: 4px;
+          flex-shrink: 0;
+      }
+
+.hero__title {
+  text-align: center;
+  font-size: 70px;
+  font-weight: 900;
+  letter-spacing: 0.02em;  
+  margin-bottom: 40px;
+  text-align: center;
+}    
+
+    /* цвет плейсхолдера */
+    .search__input::placeholder{
+      color: #fb9953;
+    }
+
+    /* убрать крестик из поля ввода при редактировании */
+    input[type="search"]::-webkit-search-cancel-button{
+      display: none;
+    }
