@@ -58,4 +58,7 @@ base CSS https://codepen.io/Quper/pen/GRRZzWy
 
 ============================================
 День 2
-
+  Подготовка к стилизации
+    https://www.youtube.com/watch?v=Y1xCorr9O2U&t=28s
+  Пишем стили для сайта
+    https://www.youtube.com/watch?v=rAYi7jCgr4M
