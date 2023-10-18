@@ -62,3 +62,11 @@ base CSS https://codepen.io/Quper/pen/GRRZzWy
     https://www.youtube.com/watch?v=Y1xCorr9O2U&t=28s
   Пишем стили для сайта
     https://www.youtube.com/watch?v=rAYi7jCgr4M
+
+  вопросы:
+    ?формула пересчета из (px) в (em)
+
+    ? .video-card__icon по макету внутренности звёздочки закрашены. 
+      у нас прозрачные
+      
+    ? <button class="video__link video__link_favorite" href="favorite...
