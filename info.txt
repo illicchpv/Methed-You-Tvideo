@@ -94,14 +94,14 @@ base CSS https://codepen.io/Quper/pen/GRRZzWy
           flex-shrink: 0;
       }
 
-.hero__title {
-  text-align: center;
-  font-size: 70px;
-  font-weight: 900;
-  letter-spacing: 0.02em;  
-  margin-bottom: 40px;
-  text-align: center;
-}    
+    .hero__title {
+      text-align: center;
+      font-size: 70px;
+      font-weight: 900;
+      letter-spacing: 0.02em;  
+      margin-bottom: 40px;
+      text-align: center;
+    }    
 
     /* цвет плейсхолдера */
     .search__input::placeholder{
