@@ -112,3 +112,24 @@ base CSS https://codepen.io/Quper/pen/GRRZzWy
     input[type="search"]::-webkit-search-cancel-button{
       display: none;
     }
+
+==========================================
+День 3
+You-Tvideo - 3 день - 01 - Небольшой урок по адаптиву
+  https://www.youtube.com/watch?v=-W8IAfgLDBc&t=60s
+You-Tvideo - 3 день - 02 - Работа с API Youtube
+  https://www.youtube.com/watch?v=EawE3jaXLWg
+
+Консоль google
+  https://console.cloud.google.com/
+API Youtube документация
+  https://developers.google.com/youtube/v3/getting-started
+API / Videos / List
+  https://developers.google.com/youtube/v3/docs/videos/list
+
+Обязательное задание:
+  Повторить то, что было в видео
+
+Бонус задание для тех кто имеет опыт:
+  Напишите функцию для обработки строки с продолжительностью ролика, 
+  которая будет возвращать значения, как в макете
