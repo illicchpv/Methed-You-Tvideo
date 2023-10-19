@@ -78,8 +78,8 @@
     padding: 27px 0;
     font-size: 14px;
   }  
-  .footer__container {
-    grid-template-columns: 305px max-content;
+  .footer__link_logo {
+    max-width: 305px;
   }  
 }
 
@@ -111,4 +111,12 @@
 
   /* footer */
 
+}
+
+@media (max-width: 540px){
+
+}
+
+@media (max-width: 320px){
+  
 }
