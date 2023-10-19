@@ -74,8 +74,41 @@
   }
    
   /* footer */
+  .footer {
+    padding: 27px 0;
+    font-size: 14px;
+  }  
+  .footer__container {
+    grid-template-columns: 305px max-content;
+  }  
 }
 
 @media (max-width: 768px){
+  .container{
+    --c-widht: 624px;
+  }
+
+  /* hero */
+  .hero{
+    padding-bottom: 42px;
+  }
+  .hero__link-text{
+    position: fixed;
+    transform: scale(0);
+  }
+  .hero__title{
+    font-size: 40px;
+  }
+
+  /* search */
+
+  /* video-list */
+  .video-list__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
   
+  /* video */
+
+  /* footer */
+
 }
