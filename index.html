@@ -7,11 +7,12 @@
 
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/index.media.css">
 </head>
 <body>
   
   <main>
-    <section class="hero">
+    <section class="hero" style="display: -none">
       <div class="container">
         <div class="hero__container">
           <a class="hero__link" href="./favorite.html">
@@ -32,7 +33,7 @@
       </div>
     </section>
 
-    <section class="search">
+    <section class="search" style="display: -none">
       <div class="container">
         <form class="search__form">
           <input class="search__input" type="search" placeholder="Найти видео...">
@@ -46,7 +47,7 @@
       </div>
     </section>
 
-    <section class="video-list">
+    <section class="video-list" style="display: -none">
       <div class="container">
         <h2 class="video-list__title">В тренде</h2>
 
@@ -166,20 +167,61 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <section class="video" style="display: -none">
+    <div class="container video_container">
+      <div class="video__player">
+        <iframe class="video__iframe"
+          title="YouTube video player" frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen
+
+          src="https://www.youtube.com/embed/--tgbNymZ7vqY"
+          
+        ></iframe>
+      </div>
+
+      <!-- временно вставлен. для удобства -->
+      <div class="video__container">
+        <div class="video__content">
+          <h2 class="video__title">Философия Идущего к реке</h2>
+
+          <p class="video__chanel">Правое полушарие интроверта</p>
+
+          <p class="video__info">
+            <span class="video__views">1 575 581 просмотр</span>
+
+            <span class="video__date">Дата премьеры: 16 авг. 2024 г.</span>
+          </p>
+
+          <p class="video__description">Смотрите наш курс-саммари «Как понимать философию» фоном.</p>
+        </div>
+
+        <button class="video__link video__link_active">
+          <span class="video__no-favorite">Избранное</span>
+          <span class="video__favorite">В избранном</span>
+
+          <svg class="video__icon">
+            <use xlink:href="./image/sprite.svg#star-ob"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" style="display: -none">
     <div class="container footer__container">
-      <a class="footer__link" href="/">
+      <a class="footer__link footer__link_logo" href="/">
         <svg class="footer__logo" viewBox="0 0 360 48" role="img" aria-label="логотип сервиса You-Tvideo">
           <use xlink:href="./image/sprite.svg#logo-white"></use>
         </svg>
       </a>
 
-      <ul class="footer__developers-list">
+      <ul class="footer__developers">
         <li class="footer__developers-item">Designer: 
-          <a class="footer__developers-link" href="https://t.me/Mrshmallow" target="_blank" rel="noopener">Anastasia Ilina</a>  
+          <a class="footer__link footer__link_developers" href="https://t.me/Mrshmallow" target="_blank" rel="noopener">Anastasia Ilina</a>  
         </li>
         <li class="footer__developers-item">Developer:    
-          <a class="footer__developers-link" href="https://t.me/quper24" target="_blank" rel="noopener">Maksim Leskin</a>
+          <a class="footer__link footer__link_developers" href="https://t.me/quper24" target="_blank" rel="noopener">Maksim Leskin</a>
         </li>
       </ul>
 

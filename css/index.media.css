@@ -1,0 +1,81 @@
+
+/* почему-то это не работает 
+  @media (width <= 1024){ }
+*/
+/* @media only screen and (max-width: 1024px) */
+@media (max-width: 1024px){  
+  .container{
+    --c-widht: 942px;
+  }
+
+  /* hero */
+  .hero {
+    padding: 64px 0 58px;
+    margin-bottom: 32px;
+  }
+
+  .hero__logo {
+    width: 200px;
+    margin-bottom: 45px;
+  }
+  .hero__title {
+    font-size: 50px;
+    margin-bottom: 32px;
+  }
+  .hero__link{
+    top: -16px;
+  }
+
+  /* search */
+
+  /* video-list */
+  .video-list {
+    padding: 60px 0;
+  }
+  
+  .video-list__title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .video-list__items {
+    gap: 32px 17px;
+  }
+  
+  .video-card__title {
+    font-size: 20px;
+  }
+  
+  .video-card__chanel {
+    font-size: 16px;
+  }
+  
+  .video-card__duration {
+    font-size: 14px;
+  }
+  
+  /* video */
+  .video {
+    padding-top: 60px;
+  }
+  
+  .video__title {
+    font-size: 32px;
+  }
+  .video__chanel {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+  .video__info {
+    font-size: 20px;
+  }
+  .video__description {
+    font-size: 20px;
+  }
+   
+  /* footer */
+}
+
+@media (max-width: 768px){
+  
+}
