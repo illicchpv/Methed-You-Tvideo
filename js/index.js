@@ -66,6 +66,8 @@ const fetchTrendingVideo = async () => {
 const displayVideo = (v) => {
   // console.log( JSON.stringify(v, false, 2) )
   videoListItems.textContent = ''
+  if(!v)
+    return;
   const listVideos = v.items.map(video => {
     const li = document.createElement('li')
     li.classList.add('video-list__item')
