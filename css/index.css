@@ -38,6 +38,15 @@ body {
   letter-spacing: 0.02em;
 }
 
+/* для того чтоб footer прижимался к низу стр. */
+body{
+  display: flex;
+  flex-direction: column;
+}
+main{
+  flex-grow: 1;
+}
+
 
 img,
 svg {
@@ -257,9 +266,17 @@ input[type="search"]::-webkit-search-cancel-button{
 }
 
 .video-list__items {
+  --grid-c-count: 3;
+  --grid-c-gap: 17px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px 17px;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(var(--grid-c-count),
+    calc(
+      (100% / var(--grid-c-count)) -
+      (var(--grid-c-gap) * (var(--grid-c-count) - 1) / var(--grid-c-count))
+    )
+  );
+  gap: 40px var(--grid-c-gap);
 }
 
 .video-card {

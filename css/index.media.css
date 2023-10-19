@@ -39,7 +39,7 @@
     margin-bottom: 40px;
   }
   .video-list__items {
-    gap: 32px 17px;
+    row-gap: 32px;
   }
   .video-card__title {
     font-size: 20px;
@@ -107,7 +107,8 @@
 
   /* video-list */
   .video-list__items {
-    grid-template-columns: repeat(2, 1fr);
+    --grid-c-count: 2;
+    /* grid-template-columns: repeat(2, 1fr); */
   }
   
   /* video */
@@ -180,7 +181,8 @@
     margin-bottom: 6px;
   }  
   .video-list__items {
-    grid-template-columns: repeat(1, 1fr);
+    --grid-c-count: 1;
+    /* grid-template-columns: repeat(1, 1fr); */
     gap: 20px;
   }
   .video-card__title {

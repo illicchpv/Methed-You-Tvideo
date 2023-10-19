@@ -124,6 +124,9 @@ You-Tvideo - 3 день - 02 - Работа с API Youtube
   https://console.cloud.google.com/
 API Youtube документация
   https://developers.google.com/youtube/v3/getting-started
+  получение списка
+  https://developers.google.com/youtube/v3/docs/videos/list
+
 API / Videos / List
   https://developers.google.com/youtube/v3/docs/videos/list
 
