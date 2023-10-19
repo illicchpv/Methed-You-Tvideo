@@ -80,7 +80,7 @@ const displayVideo = (v) => {
     li.classList.add('video-list__item')
     li.innerHTML = `
 <article class="video-card">
-  <a class="video-card__link" href="/video.html?id=${video.id}">
+  <a class="video-card__link" href="./video.html?id=${video.id}">
     <img class="video-card__thumbnail" src="${video.snippet.thumbnails.standard?.url 
       || video.snippet.thumbnails.high?.url}" 
       alt="${video.snippet.title}">
