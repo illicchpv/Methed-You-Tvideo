@@ -45,8 +45,8 @@ const parseISO8601 = (v) => {
 }
 
 const fetchTrendingVideo = async () => {
-  debugger
-  let dt = parseISO8601('PT1M') // "duration": "PT26M32S",
+  // debugger
+  // let dt = parseISO8601('PT1M') // "duration": "PT26M32S",
   try{
     const url = new URL(VIDEOS_URL)
     url.searchParams.append('key', API_KEY)
