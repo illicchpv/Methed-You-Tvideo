@@ -1,4 +1,5 @@
 // index.js
+// https://console.cloud.google.com/apis/credentials/key/98459311-8184-44ca-bfc5-c44ed49a9925?project=yt-video-402511
 const API_KEY = 'AIzaSyAfjt_fFcPVWe3A6YFiAe9jLRBcyzELjdI'
 // https://developers.google.com/youtube/v3/docs/videos/list
 const VIDEOS_URL = 'https://www.googleapis.com/youtube/v3/videos'
