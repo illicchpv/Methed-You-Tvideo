@@ -41,7 +41,7 @@ const parseISO8601 = (v) => {
   for(let i = (rArr.length -1); i >= 0; i--){
     r = rArr[i] + prefs.pop() + r;
   }
-  console.log(v, r)
+  // console.log(v, r)
   return r;
 }
 
@@ -62,13 +62,19 @@ const fetchTrendingVideo = async () => {
     return await resp.json()
   }catch(e){
     console.log('fetchTrendingVideo error:', e)
+    videoListItems.textContent = `
+    <h3>извините, в трендах ничего нет.</h3>
+    <h4>fetchTrendingVideo error:${e}</h4>
+    `;
   }
 }
 const displayVideo = (v) => {
   // console.log( JSON.stringify(v, false, 2) )
-  videoListItems.textContent = ''
-  if(!v)
+  if(!v){
+    '<h3>извините, в трендах ничего нет.</h3>'
     return;
+  }
+  videoListItems.textContent = ''
   const listVideos = v.items.map(video => {
     const li = document.createElement('li')
     li.classList.add('video-list__item')
