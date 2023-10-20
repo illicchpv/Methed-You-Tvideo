@@ -1,0 +1,122 @@
+<header id="headerExt" class="header" style="display: -none">
+  <div class="container header__container">
+    <a class="header__link" href="./">
+      <img class="header__logo" src="../image/logo-orange.svg" alt="logo icon">
+    </a>
+
+    <a class="header__link header__link_favorite" href="./favorite.html">
+      <span class="header__link-text">Избранное</span>
+      <img class="header__icon" src="../image/star-ob.svg" alt="star icon">
+    </a>
+  </div>
+</header>
+
+<section id="heroExt" class="hero" style="display: -none">
+  <div class="container">
+    <div class="hero__container">
+      <a class="hero__link" href="./favorite.html">
+        <span class="hero__link-text">Избранное</span>
+        <img class="hero__icon" src="../image/star-ow.svg" alt="start icon">
+      </a>
+
+      <img class="hero__logo" src="../image/hero__logo.svg" alt="логотип сервиса You-Tvideo">
+
+      <h1 class="hero__title">Смотри. Загружай. Создавай</h1>
+
+      <p class="hero__tagline">Удобный видеохостинг для тебя</p>
+    </div>
+  </div>
+</section>
+
+<section id="searchExt" class="search" style="display: -none">
+  <div class="container">
+    <form class="search__form">
+      <input class="search__input" type="search" placeholder="Найти видео...">
+      <button class="search__btn" type="submit">
+        <span>поиск</span>
+        <img src="../image/search.svg" alt="search icon">
+      </button>
+    </form>
+  </div>
+</section>
+
+<section id="videoExt" class="video" style="display: -none">
+  <div class="container video_container">
+    <div class="video__player">
+      <iframe class="video__iframe"
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+
+        src="https://www.youtube.com/embed/j2L6AGadrgo"
+
+      ></iframe>
+    </div>
+
+    <div class="video__container">
+      <div class="video__content">
+        <h2 class="video__title">Философия Идущего к реке</h2>
+
+        <p class="video__chanel">Правое полушарие интроверта</p>
+
+        <p class="video__info">
+          <span class="video__views">1 575 581 просмотр</span>
+
+          <span class="video__date">Дата премьеры: 16 авг. 2024 г.</span>
+        </p>
+
+        <p class="video__description">Смотрите наш курс-саммари «Как понимать философию» фоном.</p>
+      </div>
+
+      <button class="video__link video__link_active">
+        <span class="video__no-favorite">Избранное</span>
+        <span class="video__favorite">В избранном</span>
+
+        <img class="video__icon" src="../image/star-ob.svg" alt="star icon">
+      </button>
+    </div>
+  </div>
+</section>
+
+<ul id="video-list__itemsExt" class="video-list__items">
+  <li class="video-list__item">
+    <article class="video-card">
+      <a class="video-card__link" href="./video.html?????">
+        <img class="video-card__thumbnail" src="image/img2.jpg" alt="превью видео Как выжить в Средние века?">
+
+        <h3 class="video-card__title">Как выжить в Средние века?</h3>
+
+        <p class="video-card__chanel">Правое полушарие интроверта</p>
+
+        <p class="video-card__duration">31 мин 25 сек</p>
+      </a>
+      <button class="video-card__favorite video-card__favorite_active" type="button" 
+        aria-label="Добавить в избранное, Философия Идущего к реке">
+        <svg class="video-card__icon">
+          <use class="star-o" xlink:href="./image/sprite.svg#star-ob"></use>
+          <use class="star" xlink:href="./image/sprite.svg#star"></use>
+        </svg>
+      </button>
+    </article>
+  </li>
+</ul>
+
+<footer id="footerExt" class="footer" style="display: -none">
+  <div class="container footer__container">
+    <a class="footer__link footer__link_logo" href="./">
+      <img class="footer__logo" src="../image/logo-white.svg" alt="logo icon">
+    </a>
+
+    <ul class="footer__developers">
+      <li class="footer__developers-item">Designer: 
+        <a class="footer__link footer__link_developers" href="https://t.me/Mrshmallow" target="_blank" rel="noopener">Anastasia Ilina</a>  
+      </li>
+      <li class="footer__developers-item">Developer:    
+        <a class="footer__link footer__link_developers" href="https://t.me/quper24" target="_blank" rel="noopener">Maksim Leskin</a>
+      </li>
+    </ul>
+
+    <p class="footer__copyright">© You-Tvideo, 2023 </p>
+  </div>
+</footer>
+

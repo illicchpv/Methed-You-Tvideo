@@ -8,9 +8,14 @@ const SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search'
 
 const LS_KEY = 'YTfavorite'
 let favoriteIds = JSON.parse(localStorage.getItem(LS_KEY) || '[]')
-console.log('favoriteIds:', favoriteIds)
+// console.log('favoriteIds:', favoriteIds)
 
-const videoListItems = document.querySelector('.video-list__items')
+var videoListItems // = document.querySelector('.video-list__items')
+function get_videoListItems(){
+  if(videoListItems) return videoListItems
+  videoListItems = document.querySelector('.video-list__items')
+  return videoListItems
+}
 
 const fetchTrendingVideo = async () => {
   // debugger
@@ -29,7 +34,7 @@ const fetchTrendingVideo = async () => {
     return await resp.json()
   }catch(e){
     console.log('fetchTrendingVideo error:', e)
-    // videoListItems.textContent = `
+    // get_videoListItems().textContent = `
     // <h3>извините, в трендах ничего нет.</h3>
     // <h4>fetchTrendingVideo error:${e}</h4>
     // `;
@@ -55,7 +60,7 @@ const fetchFavoriteVideo = async () => {
     return await resp.json()
   }catch(e){
     console.log('fetchFavoriteVideo error:', e)
-    // videoListItems.textContent = `
+    // get_videoListItems().textContent = `
     // <h3>извините, в трендах ничего нет.</h3>
     // <h4>fetchTrendingVideo error:${e}</h4>
     // `;
@@ -81,7 +86,7 @@ const fetchVideoData = async (id) => {
     return await resp.json()
   }catch(e){
     console.log('fetchTrendingVideo error:', e)
-    if(videoListItems) videoListItems.textContent = `
+    if(get_videoListItems()) get_videoListItems().textContent = `
     <h3>извините, в трендах ничего нет.</h3>
     <h4>fetchTrendingVideo error:${e}</h4>
     `;
@@ -90,18 +95,19 @@ const fetchVideoData = async (id) => {
 
 const displayListVideo = (v) => {
   // console.log( JSON.stringify(v, false, 2) )
+  // debugger
   if(!v){
     '<h3>извините, в трендах ничего нет.</h3>'
     return;
   }
-  if(videoListItems) videoListItems.textContent = ''
+  if(get_videoListItems()) get_videoListItems().textContent = ''
   const listVideos = v.items.map(video => {
     const li = document.createElement('li')
     li.classList.add('video-list__item')
     li.innerHTML = fillVideoListTemplate(video) 
     return li
   })
-  if(videoListItems) videoListItems.append(...listVideos)
+  if(get_videoListItems()) get_videoListItems().append(...listVideos)
 }
 const displayVideo = ({items: [video]}) => { // v
   // console.log(JSON.stringify(v, false, 2))
@@ -115,33 +121,40 @@ const displayVideo = ({items: [video]}) => { // v
 }
 
 const init = () =>{
-  console.log('favoriteIds:', favoriteIds)
+  // console.log('favoriteIds:', favoriteIds)
   const a = []
   favoriteIds.forEach((e)=>{
     if(e) a.push(e);
   })
   favoriteIds = a;
   localStorage.setItem(LS_KEY, JSON.stringify(favoriteIds))
-  console.log('favoriteIds:', favoriteIds)
+  // console.log('favoriteIds:', favoriteIds)
 
   const currPage = location.pathname.split("/").pop().toLowerCase()
   const searchParams = new URLSearchParams(location.search)
   const videoId = searchParams.get('id')
   const searchQuery = searchParams.get('q')
 
-  if(currPage === '' || currPage === 'index.html'){ // выводим тренды
+  if(currPage === '' || currPage === 'index.html'
+    // || currPage === 'test.html'
+  ){ // выводим тренды
+    // debugger
     console.log('currPage: index.html ')
     fetchTrendingVideo().then(v => {
       displayListVideo(v)
     });
 
-  } else if(currPage === 'favorite.html'){
+  } else if(currPage === 'favorite.html'
+  // || currPage === 'test.html'
+  ){
     console.log('currPage: favorite.html')
     fetchFavoriteVideo().then(v => {
       displayListVideo(v)
     });
 
-  } else if(currPage === 'video.html' && videoId){
+  } else if(currPage === 'video.html' && videoId
+  // || currPage === 'test.html'
+  ){
     console.log('currPage: video.html videoId:', videoId)
     // ?id=-BXItmWzWNE
     fetchVideoData(videoId).then(v => {
@@ -151,7 +164,9 @@ const init = () =>{
       displayListVideo(v)
     });
 
-  } else if(currPage === 'search.html'){
+  } else if(currPage === 'search.html'
+  // || currPage === 'test.html'
+  ){
     console.log('currPage: search.html', 'searchQuery:', searchQuery)
     fetchFavoriteVideo().then(v => {
       displayListVideo(v)
@@ -163,7 +178,7 @@ const init = () =>{
 
   document.body.addEventListener('click', ({target})=>{
     // debugger
-    console.log('favoriteIds:', favoriteIds)
+    // console.log('favoriteIds:', favoriteIds)
     const itemFavorite = target.closest('.favorite')
     if(itemFavorite){
       console.log('itemFavorite:', itemFavorite.dataset.videoId)
@@ -182,6 +197,7 @@ const init = () =>{
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  init()
+  // videoListItems = document.querySelector('.video-list__items')
+  // init()
 });
 

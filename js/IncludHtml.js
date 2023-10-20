@@ -206,6 +206,7 @@ let IncludHtml = (function () {
       }
     }
     // debugger
+    // console.log(params.extEl.outerHTML)
     if(params.incInner){
       params.docEl.outerHTML = params.extEl.innerHTML;
     }else{

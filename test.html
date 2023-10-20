@@ -1,17 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  Document
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./image/favicon.png" />
+    <title>You-Tvideo | твой видео хостинг</title>
 
-  <style>
-    /* цвет плейсхолдера */
-  </style>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/index.media.css" />
 
-  
-</body>
+    <script src="./js/IncludHtml.js" defer></script>
+    <script src="./js/utils.js" defer></script>
+    <script src="./js/templates.js" defer></script>
+    <script src="./js/index.js" defer></script>
+  </head>
+  <body>
+
+    <h2>------------------------------------</h2>
+    <div
+      class="incs"
+      data-incs='{
+        "onLoadCalback": "inc_Onload",
+        "incFile": "./js/includ.html",
+        "incFromId": "headerExt"
+      }'
+    ></div>
+    <h2>------------------------------------</h2>
+    <div
+      class="incs"
+      data-incs='{
+        "onLoadCalback": "inc_Onload",
+        "incFile": "./js/includ.html",
+        "incFromId": "heroExt"
+      }'
+    ></div>
+    <h2>------------------------------------</h2>
+    <div
+      class="incs"
+      data-incs='{
+        "onLoadCalback": "inc_Onload",
+        "incFile": "./js/includ.html",
+        "incFromId": "searchExt"
+      }'
+    ></div>
+    <h2>------------------------------------</h2>
+    <div
+      class="incs"
+      data-incs='{
+        "onLoadCalback": "inc_Onload",
+        "incFile": "./js/includ.html",
+        "incFromId": "videoExt"
+      }'
+    ></div>
+    <h2>------------------------------------</h2>
+    <section id="video-listExt" class="video-list" style="display: -none">
+      <div class="container">
+        <h2 class="video-list__title">В тренде</h2>
+
+        <div
+          class="incs"
+          data-incs='{
+            "onLoadCalback": "inc_Onload",
+            "incFile": "./js/includ.html",
+            "incFromId": "video-list__itemsExt"
+          }'
+        ></div>
+      </div>
+    </section>
+    <h2>------------------------------------</h2>
+    <div
+      class="incs"
+      data-incs='{
+        "onLoadCalback": "inc_Onload",
+        "incFile": "./js/includ.html",
+        "incFromId": "footerExt"
+      }'
+    ></div>
+    <h2>------------------------------------</h2>
+
+    <!--  -->
+    <script>
+      const inc_Onload = function (p) {
+        // обработчик вставляемых элементов
+        p.extEl.innerHTML = IncludHtml.replaceAll(p.extEl.innerHTML, "../image/", "./image/");
+      };
+      document.addEventListener("DOMContentLoaded", function () {
+        IncludHtml.doIncludAll(".incs", () => {
+          console.log("IncludHtml Finish: Ok"); // вызывается когда IncludHtml всё сделал
+          init()
+        });
+      });
+    </script>
+  </body>
 </html>
