@@ -34,6 +34,7 @@ const parseISO8601 = (v) => {
   // console.log(v, r)
   return r.trim();
 }
+/* ещё вариант */
 const parseISO8601_v2 = (v) =>{
   let hMatch = v.match(/(\d+)H/)
   let mMatch = v.match(/(\d+)M/)
@@ -52,6 +53,10 @@ const parseISO8601_v2 = (v) =>{
     r += `${s} сек`
   }
   return r.trim()
+}
+/* ещё вариант */
+const parseISO8601_v3 = (v) =>{
+  return v.slice(2).replace("H", " ч ").replace("M", " мин ").replace("S", " сек").trim();
 }
 const formatDte = (v) => {
   const date = new Date(v)

@@ -117,7 +117,7 @@ const displayVideo = ({items: [video]}) => { // v
   video.snippet.description = replaceAll(d, '\n', '<br>')
   // console.log(JSON.stringify(video.snippet.description, false, 2))
   const videoEl = document.querySelector('.video')
-  videoEl.innerHTML = fillVideoTemplate(video)
+  if(videoEl) videoEl.innerHTML = fillVideoTemplate(video)
 }
 
 const init = () =>{
@@ -196,8 +196,18 @@ const init = () =>{
   })
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  // videoListItems = document.querySelector('.video-list__items')
-  // init()
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   // videoListItems = document.querySelector('.video-list__items')
+//   // init()
+// });
 
+const inc_Onload = function (p) {
+  // обработчик вставляемых элементов
+  p.extEl.innerHTML = IncludHtml.replaceAll(p.extEl.innerHTML, "../image/", "./image/");
+};
+document.addEventListener("DOMContentLoaded", function () {
+  IncludHtml.doIncludAll(".incs", () => {
+    console.log("IncludHtml Finish: Ok"); // вызывается когда IncludHtml всё сделал
+    init()
+  });
+});

@@ -147,6 +147,26 @@ API / Videos / List
   Страница с видео и избранное
   https://www.youtube.com/watch?v=yQm9Onk6KvQ
 
+  БЕСПЛАТНЫЙ ИНТЕНСИВ ПО ФРОНТЕНДУ «СВОЙ YOUTUBE» Финал
+    https://www.youtube.com/watch?v=KRlHF0BqEYo
+
+      ? xPage GigaSchool  в Челябинске
+
+      ! плагин JS Quick Console
+
+      google projects
+        https://console.cloud.google.com/welcome?project=yt-video-402511
+
+      функция для склонение числительных
+        https://codepen.io/Quper/pen/zYGxbJm?editors=0010
+
+      Vercel's frontend cloud gives developers the frameworks, workflows,
+        https://vercel.com/
+
+      Смотри. Загружай. Создавай
+        https://you-tvideo.vercel.app/    
+
+=========================================================
   задание:
       прицеплю includHTML
       

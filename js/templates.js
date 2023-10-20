@@ -9,7 +9,7 @@ const fillVideoListTemplate = (video) => (`
 
     <p class="video-card__chanel">${video.snippet.channelTitle}</p>
 
-    <p class="video-card__duration">${parseISO8601_v2(video.contentDetails.duration)} <!-- 31 мин 25 сек --></p>
+    <p class="video-card__duration">${parseISO8601_v3(video.contentDetails.duration)} <!-- 31 мин 25 сек --></p>
   </a>
   <button class="video-card__favorite favorite ${favoriteIds.includes(video.id)?'active':''}" 
     type="button" 
