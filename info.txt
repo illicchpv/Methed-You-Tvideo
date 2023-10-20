@@ -148,6 +148,8 @@ API / Videos / List
   https://www.youtube.com/watch?v=yQm9Onk6KvQ
 
   задание:
+      прицеплю includHTML
+      
       <!-- покрасить *  -->
       <svg class="video__icon">
         <use xlink:href="./image/sprite.svg#star-ob"></use>
