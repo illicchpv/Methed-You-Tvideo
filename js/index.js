@@ -7,8 +7,8 @@ const VIDEOS_URL = 'https://www.googleapis.com/youtube/v3/videos'
 const SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search'
 
 const LS_KEY = 'YTfavorite'
-const favoriteIds = JSON.parse(localStorage.getItem(LS_KEY) || '[]')
-// console.log('favoriteIds:', favoriteIds)
+let favoriteIds = JSON.parse(localStorage.getItem(LS_KEY) || '[]')
+console.log('favoriteIds:', favoriteIds)
 
 const videoListItems = document.querySelector('.video-list__items')
 
@@ -113,6 +113,16 @@ const displayVideo = ({items: [video]}) => { // v
 }
 
 const init = () =>{
+
+  console.log('favoriteIds:', favoriteIds)
+  const a = []
+  favoriteIds.forEach((e)=>{
+    if(e) a.push(e);
+  })
+  favoriteIds = a;
+  localStorage.setItem(LS_KEY, JSON.stringify(favoriteIds))
+  console.log('favoriteIds:', favoriteIds)
+
   const currPage = location.pathname.split("/").pop().toLowerCase()
   const searchParams = new URLSearchParams(location.search)
   const videoId = searchParams.get('id')
@@ -152,9 +162,10 @@ const init = () =>{
 
   document.body.addEventListener('click', ({target})=>{
     // debugger
+    console.log('favoriteIds:', favoriteIds)
     const itemFavorite = target.closest('.favorite')
     if(itemFavorite){
-      console.log('itemFavorite', itemFavorite.dataset.videoId)
+      console.log('itemFavorite:', itemFavorite.dataset.videoId)
       const videoId = itemFavorite.dataset.videoId
       if(favoriteIds.includes(videoId)){
         const i = favoriteIds.indexOf(videoId)

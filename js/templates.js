@@ -54,13 +54,16 @@ const fillVideoTemplate = (video) => (`
       <!-- Смотрите наш курс-саммари «Как понимать философию» фоном. -->
       </p>
     </div>
-    <button class="video__link favorite ${favoriteIds.includes(video.id)?'active':''}">
+    <button class="video__link favorite 
+        ${favoriteIds.includes(video.id)?'active':''}"
+        data-video-id="${video.id}">
       <span class="video__no-favorite">Избранное</span>
       <span class="video__favorite">В избранном</span>
 
       <!-- покрасить *  -->
       <svg class="video__icon">
         <use xlink:href="./image/sprite.svg#star-ob"></use>
+        <use class="star" xlink:href="./image/sprite.svg#star"></use>
       </svg>
     </button>
   </div>
