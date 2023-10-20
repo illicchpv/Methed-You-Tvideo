@@ -29,10 +29,10 @@ const fetchTrendingVideo = async () => {
     return await resp.json()
   }catch(e){
     console.log('fetchTrendingVideo error:', e)
-    videoListItems.textContent = `
-    <h3>извините, в трендах ничего нет.</h3>
-    <h4>fetchTrendingVideo error:${e}</h4>
-    `;
+    // videoListItems.textContent = `
+    // <h3>извините, в трендах ничего нет.</h3>
+    // <h4>fetchTrendingVideo error:${e}</h4>
+    // `;
   }
 }
 const fetchFavoriteVideo = async () => {
@@ -54,11 +54,11 @@ const fetchFavoriteVideo = async () => {
     }
     return await resp.json()
   }catch(e){
-    console.log('fetchTrendingVideo error:', e)
-    videoListItems.textContent = `
-    <h3>извините, в трендах ничего нет.</h3>
-    <h4>fetchTrendingVideo error:${e}</h4>
-    `;
+    console.log('fetchFavoriteVideo error:', e)
+    // videoListItems.textContent = `
+    // <h3>извините, в трендах ничего нет.</h3>
+    // <h4>fetchTrendingVideo error:${e}</h4>
+    // `;
   }
 }
 const fetchVideoData = async (id) => {
@@ -107,7 +107,9 @@ const displayVideo = ({items: [video]}) => { // v
   // console.log(JSON.stringify(v, false, 2))
   // debugger
   // const video = v.items[0]
-  // console.log(JSON.stringify(video, false, 2))
+  const d = video.snippet.description
+  video.snippet.description = replaceAll(d, '\n', '<br>')
+  // console.log(JSON.stringify(video.snippet.description, false, 2))
   const videoEl = document.querySelector('.video')
   videoEl.innerHTML = fillVideoTemplate(video)
 }

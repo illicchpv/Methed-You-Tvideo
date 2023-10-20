@@ -63,3 +63,6 @@ const formatDte = (v) => {
   return formatter.format(date)
 }
 
+const replaceAll = (src, search, replace) => {
+  return src.split(search).join(replace);
+}
