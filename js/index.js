@@ -81,7 +81,7 @@ const fetchVideoData = async (id) => {
     return await resp.json()
   }catch(e){
     console.log('fetchTrendingVideo error:', e)
-    videoListItems.textContent = `
+    if(videoListItems) videoListItems.textContent = `
     <h3>извините, в трендах ничего нет.</h3>
     <h4>fetchTrendingVideo error:${e}</h4>
     `;
@@ -94,14 +94,14 @@ const displayListVideo = (v) => {
     '<h3>извините, в трендах ничего нет.</h3>'
     return;
   }
-  videoListItems.textContent = ''
+  if(videoListItems) videoListItems.textContent = ''
   const listVideos = v.items.map(video => {
     const li = document.createElement('li')
     li.classList.add('video-list__item')
     li.innerHTML = fillVideoListTemplate(video) 
     return li
   })
-  videoListItems.append(...listVideos)
+  if(videoListItems) videoListItems.append(...listVideos)
 }
 const displayVideo = ({items: [video]}) => { // v
   // console.log(JSON.stringify(v, false, 2))
@@ -115,7 +115,6 @@ const displayVideo = ({items: [video]}) => { // v
 }
 
 const init = () =>{
-
   console.log('favoriteIds:', favoriteIds)
   const a = []
   favoriteIds.forEach((e)=>{
@@ -183,10 +182,6 @@ const init = () =>{
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  // IncludHtml.doIncludAll(".incs", () =>{
-  //   console.log("IncludHtml Finish: Ok"); // вызывается когда IncludHtml всё сделал
-  // });
-
   init()
 });
 
