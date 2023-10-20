@@ -12,140 +12,6 @@ const favoriteIds = JSON.parse(localStorage.getItem(LS_KEY) || '[]')
 
 const videoListItems = document.querySelector('.video-list__items')
 
-const fillVideoListTemplate = (video) => (`
-<article class="video-card">
-  <a class="video-card__link" href="./video.html?id=${video.id}">
-    <img class="video-card__thumbnail" src="${video.snippet.thumbnails.standard?.url 
-      || video.snippet.thumbnails.high?.url}" 
-      alt="${video.snippet.title}">
-
-    <h3 class="video-card__title">${video.snippet.title}</h3>
-
-    <p class="video-card__chanel">${video.snippet.channelTitle}</p>
-
-    <p class="video-card__duration">${parseISO8601_v2(video.contentDetails.duration)} <!-- 31 мин 25 сек --></p>
-  </a>
-  <button class="video-card__favorite favorite ${favoriteIds.includes(video.id)?'active':''}" 
-    type="button" 
-    aria-label="Добавить в избранное, ${video.snippet.title}"
-    data-video-id="${video.id}">
-    <svg class="video-card__icon">
-      <use class="star-o" xlink:href="./image/sprite.svg#star-ob"></use>
-      <use class="star" xlink:href="./image/sprite.svg#star"></use>
-    </svg>
-  </button>
-</article>
-`);
-const fillVideoTemplate = (video) => (`
-<div class="container video_container">
-  <div class="video__player">
-    <iframe class="video__iframe"
-      title="YouTube video player" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      allowfullscreen
-
-      src="https://www.youtube.com/embed/${video.id}"
-
-    ></iframe>
-  </div>
-
-  <!-- временно вставлен. для удобства -->
-  <div class="video__container">
-    <div class="video__content">
-      <h2 class="video__title">${video.snippet.title}</h2>
-
-      <p class="video__chanel">${video.snippet.channelTitle}</p>
-
-      <p class="video__info">
-        <span class="video__views">${parseInt(video.statistics.viewCount).toLocaleString()} просмотр.</span>
-
-        <span class="video__date">Дата премьеры: ${formatDte(video.snippet.publishedAt)}
-        <!-- 16 авг. 2024 г. -->
-        </span>
-      </p>
-
-      <p class="video__description">${video.snippet.description}
-      <!-- Смотрите наш курс-саммари «Как понимать философию» фоном. -->
-      </p>
-    </div>
-    <button class="video__link favorite ${favoriteIds.includes(video.id)?'active':''}">
-      <span class="video__no-favorite">Избранное</span>
-      <span class="video__favorite">В избранном</span>
-
-      <!-- покрасить *  -->
-      <svg class="video__icon">
-        <use xlink:href="./image/sprite.svg#star-ob"></use>
-      </svg>
-    </button>
-  </div>
-</div>
-`);
-
-/*
-The length of the video. The property value is an ISO 8601 duration. 
-For example, for a video that is at least one minute long and less than one hour long, 
-the duration is 
-in the format PT#M#S, 
-in which the letters PT indicate that the value 
-specifies a period of time, and the letters M and S refer to length in minutes and seconds, 
-respectively. The # characters preceding the M and S letters are both integers that specify 
-the number of minutes (or seconds) of the video. 
-For example, 
-a value of PT15M33S indicates that the video is 15 minutes and 33 seconds long.
-If the video is at least one hour long, the duration is 
-in the format PT#H#M#S, 
-in which the # preceding the letter H specifies the length of the video in hours and 
-all of the other details are the same as described above. 
-If the video is at least one day long, 
-the letters P and T are separated, and the value's 
-format is P#DT#H#M#S. 
-Please refer to the ISO 8601 specification for complete details.
-*/
-const parseISO8601 = (v) => {
-  const prefs = []; // ' час ', ' мин ', ' сек'
-  if(v.indexOf('H')>=0)
-    prefs.push(' час ');
-  if(v.indexOf('M')>=0)
-    prefs.push(' мин ');
-  if(v.indexOf('S')>=0)
-    prefs.push(' сек');
-  const rArr = v.replace('S', ' ').replace('M', ' ').replace('H', ' ').replace('PT', ' ').trim().split(' ');
-  var r = ''
-  for(let i = (rArr.length -1); i >= 0; i--){
-    r = rArr[i] + prefs.pop() + r;
-  }
-  // console.log(v, r)
-  return r.trim();
-}
-const parseISO8601_v2 = (v) =>{
-  let hMatch = v.match(/(\d+)H/)
-  let mMatch = v.match(/(\d+)M/)
-  let sMatch = v.match(/(\d+)S/)
-  let h = hMatch ? parseInt(hMatch[1]) : 0;
-  let m = hMatch ? parseInt(mMatch[1]) : 0;
-  let s = hMatch ? parseInt(sMatch[1]) : 0;
-  let r = ''
-  if(h > 0){
-    r += `${h} ч `
-  }
-  if(m > 0){
-    r += `${m} мин `
-  }
-  if(h > 0){
-    r += `${s} сек`
-  }
-  return r.trim()
-}
-const formatDte = (v) => {
-  const date = new Date(v)
-  const formatter = new Intl.DateTimeFormat('ru-RU', {
-    day: 'numeric',
-    month: 'short',
-    year: 'numeric'
-  })
-  return formatter.format(date)
-}
-
 const fetchTrendingVideo = async () => {
   // debugger
   // let dt = parseISO8601('PT1M') // "duration": "PT26M32S",
@@ -244,16 +110,6 @@ const displayVideo = ({items: [video]}) => { // v
   // console.log(JSON.stringify(video, false, 2))
   const videoEl = document.querySelector('.video')
   videoEl.innerHTML = fillVideoTemplate(video)
-return
-
-  videoListItems.textContent = ''
-  const listVideos = v.items.map(video => {
-    const li = document.createElement('li')
-    li.classList.add('video-list__item')
-    li.innerHTML = fillVideoListTemplate(video) 
-    return li
-  })
-  videoListItems.append(...listVideos)
 }
 
 const init = () =>{
@@ -313,4 +169,11 @@ const init = () =>{
   })
 }
 
-init()
+document.addEventListener("DOMContentLoaded", function () {
+  // IncludHtml.doIncludAll(".incs", () =>{
+  //   console.log("IncludHtml Finish: Ok"); // вызывается когда IncludHtml всё сделал
+  // });
+
+  init()
+});
+
