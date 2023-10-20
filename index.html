@@ -17,7 +17,8 @@
     https://illicchpv.github.io/Methed-You-Tvideo/
    -->
 
-  <header class="header" style="display: -none">
+  <!-- на главной нет -->
+  <header class="header" style="display: none">
     <div class="container header__container">
       <a class="header__link" href="/">
         <svg class="header__logo" viewBox="0 0 240 32" role="img" 
@@ -36,6 +37,8 @@
   </header>
 
   <main>
+    <!-- на избранное нет -->
+    <!-- на видео нет -->
     <section class="hero" style="display: -none">
       <div class="container">
         <div class="hero__container">
@@ -71,34 +74,55 @@
       </div>
     </section>
 
+    <!-- на главной нет -->
+    <!-- на избранное нет -->
+    <section class="video" style="display: none">
+      <div class="container video_container">
+        <div class="video__player">
+          <iframe class="video__iframe"
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen
+  
+            src="https://www.youtube.com/embed/j2L6AGadrgo"
+  
+          ></iframe>
+        </div>
+  
+        <div class="video__container">
+          <div class="video__content">
+            <h2 class="video__title">Философия Идущего к реке</h2>
+  
+            <p class="video__chanel">Правое полушарие интроверта</p>
+  
+            <p class="video__info">
+              <span class="video__views">1 575 581 просмотр</span>
+  
+              <span class="video__date">Дата премьеры: 16 авг. 2024 г.</span>
+            </p>
+  
+            <p class="video__description">Смотрите наш курс-саммари «Как понимать философию» фоном.</p>
+          </div>
+  
+          <button class="video__link video__link_active">
+            <span class="video__no-favorite">Избранное</span>
+            <span class="video__favorite">В избранном</span>
+  
+            <svg class="video__icon">
+              <use xlink:href="./image/sprite.svg#star-ob"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
     <section class="video-list" style="display: -none">
       <div class="container">
         <h2 class="video-list__title">В тренде</h2>
 
         <!-- video-list__items -->
         <ul class="video-list__items">
-          <!-- <li class="video-list__item">
-            <article class="video-card">
-              <a class="video-card__link" href="/video.html?????">
-                <img class="video-card__thumbnail" src="image/img1.jpg" 
-                  alt="превью видео Философия Идущего к реке">
-
-                <h3 class="video-card__title">Философия Идущего к реке</h3>
-
-                <p class="video-card__chanel">Правое полушарие интроверта</p>
-
-                <p class="video-card__duration">31 мин 25 сек</p>
-              </a>
-              <button class="video-card__favorite" type="button" 
-                aria-label="Добавить в избранное, Философия Идущего к реке">
-                <svg class="video-card__icon">
-                  <use class="star-o" xlink:href="./image/sprite.svg#star-ob"></use>
-                  <use class="star" xlink:href="./image/sprite.svg#star"></use>
-                </svg>
-              </button>
-            </article>
-          </li>
-
+<!-- 
           <li class="video-list__item">
             <article class="video-card">
               <a class="video-card__link" href="/video.html?????">
@@ -119,118 +143,13 @@
               </button>
             </article>
           </li>
-
-          <li class="video-list__item">
-            <article class="video-card">
-              <a class="video-card__link" href="/video.html?????">
-                <img class="video-card__thumbnail" src="image/img1.jpg" 
-                  alt="превью видео Философия Идущего к реке">
-
-                <h3 class="video-card__title">Философия Идущего к реке</h3>
-
-                <p class="video-card__chanel">Правое полушарие интроверта</p>
-
-                <p class="video-card__duration">31 мин 25 сек</p>
-              </a>
-              <button class="video-card__favorite" type="button" 
-                aria-label="Добавить в избранное, Философия Идущего к реке">
-                <svg class="video-card__icon">
-                  <use class="star-o" xlink:href="./image/sprite.svg#star-ob"></use>
-                  <use class="star" xlink:href="./image/sprite.svg#star"></use>
-                </svg>
-              </button>
-            </article>
-          </li>
-
-          <li class="video-list__item">
-            <article class="video-card">
-              <a class="video-card__link" href="/video.html?????">
-                <img class="video-card__thumbnail" src="image/img2.jpg" alt="превью видео Как выжить в Средние века?">
-
-                <h3 class="video-card__title">Как выжить в Средние века?</h3>
-
-                <p class="video-card__chanel">Правое полушарие интроверта</p>
-
-                <p class="video-card__duration">31 мин 25 сек</p>
-              </a>
-              <button class="video-card__favorite video-card__favorite_active" type="button" 
-                aria-label="Добавить в избранное, Философия Идущего к реке">
-                <svg class="video-card__icon">
-                  <use class="star-o" xlink:href="./image/sprite.svg#star-ob"></use>
-                  <use class="star" xlink:href="./image/sprite.svg#star"></use>
-                </svg>
-              </button>
-            </article>
-          </li>
-
-          <li class="video-list__item">
-            <article class="video-card">
-              <a class="video-card__link" href="/video.html?????">
-                <img class="video-card__thumbnail" src="image/img1.jpg" 
-                  alt="превью видео Философия Идущего к реке">
-
-                <h3 class="video-card__title">Философия Идущего к реке</h3>
-
-                <p class="video-card__chanel">Правое полушарие интроверта</p>
-
-                <p class="video-card__duration">31 мин 25 сек</p>
-              </a>
-              <button class="video-card__favorite" type="button" 
-                aria-label="Добавить в избранное, Философия Идущего к реке">
-                <svg class="video-card__icon">
-                  <use class="star-o" xlink:href="./image/sprite.svg#star-ob"></use>
-                  <use class="star" xlink:href="./image/sprite.svg#star"></use>
-                </svg>
-              </button>
-            </article>
-          </li>
-        </ul> -->
-          <!-- /video-list__items -->
+ -->
+        </ul>
 
       </div>
     </section>
+
   </main>
-<h2></h2>
-  <section class="video" style="display: -none">
-    <div class="container video_container">
-      <div class="video__player">
-        <iframe class="video__iframe"
-          title="YouTube video player" frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          allowfullscreen
-
-          src="https://www.youtube.com/embed/j2L6AGadrgo"
-
-        ></iframe>
-      </div>
-
-      <!-- временно вставлен. для удобства -->
-      <div class="video__container">
-        <div class="video__content">
-          <h2 class="video__title">Философия Идущего к реке</h2>
-
-          <p class="video__chanel">Правое полушарие интроверта</p>
-
-          <p class="video__info">
-            <span class="video__views">1 575 581 просмотр</span>
-
-            <span class="video__date">Дата премьеры: 16 авг. 2024 г.</span>
-          </p>
-
-          <p class="video__description">Смотрите наш курс-саммари «Как понимать философию» фоном.</p>
-        </div>
-
-        <button class="video__link video__link_active">
-          <span class="video__no-favorite">Избранное</span>
-          <span class="video__favorite">В избранном</span>
-
-          <svg class="video__icon">
-            <use xlink:href="./image/sprite.svg#star-ob"></use>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </section>
 
   <footer class="footer" style="display: -none">
     <div class="container footer__container">
@@ -250,7 +169,8 @@
       </ul>
 
       <p class="footer__copyright">© You-Tvideo, 2023 </p>
-  </div>
+    </div>
   </footer>
-</body>
+
+  </body>
 </html>

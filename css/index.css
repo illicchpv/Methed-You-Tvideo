@@ -322,6 +322,7 @@ input[type="search"]::-webkit-search-cancel-button{
   display: none;
 }
 
+.video-card__favorite.active .star,
 .video-card__favorite_active .star{
   display: block;
 }
@@ -396,9 +397,11 @@ input[type="search"]::-webkit-search-cancel-button{
 .video__link .video__favorite {
   display: none;
 }
+.video__link.active .video__no-favorite,
 .video__link_active .video__no-favorite {
   display: none;
 }
+.video__link.active .video__favorite,
 .video__link_active .video__favorite {
   display: block;
 }

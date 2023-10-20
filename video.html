@@ -8,10 +8,13 @@
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/index.media.css">
+
+  <script src="./js/index.js" defer></script>
 </head>
 <body>
   
-  <header class="header">
+  <!-- на главной нет -->
+  <header class="header" style="display: -none">
     <div class="container header__container">
       <a class="header__link" href="/">
         <svg class="header__logo" viewBox="0 0 240 32" role="img" 
@@ -21,7 +24,7 @@
       </a>
 
       <a class="header__link header__link_favorite" href="./favorite.html">
-        <span>Избранное</span>
+        <span class="header__link-text">Избранное</span>
         <svg class="header__icon">
           <use xlink:href="./image/sprite.svg#star-ob"></use>
         </svg>
@@ -30,11 +33,33 @@
   </header>
 
   <main>
+    <!-- на избранное нет -->
+    <!-- на видео нет -->
+    <section class="hero" style="display: none">
+      <div class="container">
+        <div class="hero__container">
+          <a class="hero__link" href="./favorite.html">
+            <span class="hero__link-text">Избранное</span>
+            <svg class="hero__icon">
+              <use xlink:href="./image/sprite.svg#star-ow"></use>
+            </svg>
+          </a>
 
-    <section class="search">
+          <svg class="hero__logo" viewBox="0 0 360 48" role="img" aria-label="логотип сервиса You-Tvideo">
+            <use xlink:href="./image/sprite.svg#logo-white"></use>
+          </svg>
+  
+          <h1 class="hero__title">Смотри. Загружай. Создавай</h1>
+
+          <p class="hero__tagline">Удобный видеохостинг для тебя</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="search" style="display: -none">
       <div class="container">
         <form class="search__form">
-          <input class="search__input" type="search">
+          <input class="search__input" type="search" placeholder="Найти видео...">
           <button class="search__btn" type="submit">
             <span>поиск</span>
             <svg class="search__icon">
@@ -45,38 +70,40 @@
       </div>
     </section>
 
-    <section class="video">
+    <!-- на главной нет -->
+    <!-- на избранное нет -->
+    <section class="video" style="display: -none">
       <div class="container video_container">
         <div class="video__player">
           <iframe class="video__iframe"
             title="YouTube video player" frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowfullscreen
-
-            src="https://www.youtube.com/embed/--tgbNymZ7vqY"
-            
+  
+            src="https://www.youtube.com/embed/j2L6AGadrgo"
+  
           ></iframe>
         </div>
-
+  
         <div class="video__container">
           <div class="video__content">
             <h2 class="video__title">Философия Идущего к реке</h2>
-
+  
             <p class="video__chanel">Правое полушарие интроверта</p>
-
+  
             <p class="video__info">
               <span class="video__views">1 575 581 просмотр</span>
-
+  
               <span class="video__date">Дата премьеры: 16 авг. 2024 г.</span>
             </p>
-
+  
             <p class="video__description">Смотрите наш курс-саммари «Как понимать философию» фоном.</p>
           </div>
-
+  
           <button class="video__link video__link_active">
             <span class="video__no-favorite">Избранное</span>
             <span class="video__favorite">В избранном</span>
-
+  
             <svg class="video__icon">
               <use xlink:href="./image/sprite.svg#star-ob"></use>
             </svg>
@@ -85,33 +112,13 @@
       </div>
     </section>
 
-    <section class="video-list">
+    <section class="video-list" style="display: -none">
       <div class="container">
         <h2 class="video-list__title">Похожие видео</h2>
 
+        <!-- video-list__items -->
         <ul class="video-list__items">
-          <li class="video-list__item">
-            <article class="video-card">
-              <a class="video-card__link" href="/video.html?????">
-                <img class="video-card__thumbnail" src="image/img1.jpg" 
-                  alt="превью видео Философия Идущего к реке">
-
-                <h3 class="video-card__title">Философия Идущего к реке</h3>
-
-                <p class="video-card__chanel">Правое полушарие интроверта</p>
-
-                <p class="video-card__duration">31 мин 25 сек</p>
-              </a>
-              <button class="video-card__favorite" type="button" 
-                aria-label="Добавить в избранное, Философия Идущего к реке">
-                <svg class="video-card__icon">
-                  <use class="star-o" xlink:href="./image/sprite.svg#star-ow"></use>
-                  <use class="star" xlink:href="./image/sprite.svg#star"></use>
-                </svg>
-              </button>
-            </article>
-          </li>
-
+<!-- 
           <li class="video-list__item">
             <article class="video-card">
               <a class="video-card__link" href="/video.html?????">
@@ -123,7 +130,7 @@
 
                 <p class="video-card__duration">31 мин 25 сек</p>
               </a>
-              <button class="video-card__favorite" type="button" 
+              <button class="video-card__favorite video-card__favorite_active" type="button" 
                 aria-label="Добавить в избранное, Философия Идущего к реке">
                 <svg class="video-card__icon">
                   <use class="star-o" xlink:href="./image/sprite.svg#star-ob"></use>
@@ -132,31 +139,32 @@
               </button>
             </article>
           </li>
+ -->
         </ul>
+
       </div>
     </section>
+
   </main>
 
-  <footer class="footer">
+  <footer class="footer" style="display: -none">
     <div class="container footer__container">
-      <a class="footer__link" href="/">
+      <a class="footer__link footer__link_logo" href="/">
         <svg class="footer__logo" viewBox="0 0 360 48" role="img" aria-label="логотип сервиса You-Tvideo">
           <use xlink:href="./image/sprite.svg#logo-white"></use>
         </svg>
       </a>
 
-      <ul class="footer__developers-list">
+      <ul class="footer__developers">
         <li class="footer__developers-item">Designer: 
-          <a class="footer__developers-link" href="https://t.me/Mrshmallow" target="_blank" rel="noopener">Anastasia Ilina</a>  
+          <a class="footer__link footer__link_developers" href="https://t.me/Mrshmallow" target="_blank" rel="noopener">Anastasia Ilina</a>  
         </li>
         <li class="footer__developers-item">Developer:    
-          <a class="footer__developers-link" href="https://t.me/quper24" target="_blank" rel="noopener">Maksim Leskin</a>
-        </li>
-        <li class="footer__developers-item">
-          <span class="footer__copyright">© You-Tvideo, 2023 </span>
+          <a class="footer__link footer__link_developers" href="https://t.me/quper24" target="_blank" rel="noopener">Maksim Leskin</a>
         </li>
       </ul>
-      
+
+      <p class="footer__copyright">© You-Tvideo, 2023 </p>
     </div>
   </footer>
 
